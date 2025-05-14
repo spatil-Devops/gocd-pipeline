@@ -24,6 +24,34 @@ pipelines:
                 command: ls
     - QA:
         fetch_materials: true
+        approval:
+          type: manual
+        jobs:
+          ansible:
+            timeout: 0
+            tasks:
+              - exec:
+                  arguments:
+                    - -l
+                  command: ls
+                  run_if: passed
+    - Stage:
+        fetch_materials: true
+        approval:
+          type: manual
+        jobs:
+          ansible:
+            timeout: 0
+            tasks:
+              - exec:
+                  arguments:
+                    - -l
+                  command: ls
+                  run_if: passed
+    - Prod:
+        fetch_materials: true
+        approval:
+          type: manual
         jobs:
           ansible:
             timeout: 0
