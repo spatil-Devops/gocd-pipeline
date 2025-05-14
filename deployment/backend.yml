@@ -1,0 +1,35 @@
+format_version: 10
+pipelines:
+  backend:
+    group: App-Deployments
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-a15a35c:
+        git: https://github.com/spatil-Devops/expense-shell.git
+        shallow_clone: true
+        auto_update: true
+        branch: main
+    stages:
+    - DEV:
+        fetch_materials: true
+        jobs:
+          ansible:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -l
+                command: ls
+    - QA:
+        fetch_materials: true
+        jobs:
+          ansible:
+            timeout: 0
+            tasks:
+              - exec:
+                  arguments:
+                    - -l
+                  command: ls
+                  run_if: passed
