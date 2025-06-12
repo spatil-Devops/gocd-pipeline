@@ -13,6 +13,7 @@ pipelines:
         branch: main
     secure_variables:
       SSH_PASSWORD: "AES:j91hxwVAbj4VqDtcB+jm0w==:YCRKBloh/y76NMig8WlCXw=="
+      vault_token: "AES:CGxtA/YfGkEZc0OMDPfuFQ==:Sbiyc+ZnvKcPb2jXS57baUl/4Egw+ushzjoIn/OwhDU="
     environment_variables:
       component: backend
     template: ansible-app-deployment
