@@ -19,6 +19,7 @@ pipelines:
           fetch_materials: true
           environment_variables:
             env: dev
+            action : apply
           approval:
             type: manual
           jobs:
@@ -31,6 +32,7 @@ pipelines:
           fetch_materials: true
           environment_variables:
             env: prod
+            action : apply
           approval:
             type: manual
           jobs:
