@@ -13,6 +13,7 @@ pipelines:
         branch: main
     secure_variables:
       SSH_PASSWORD: "AES:j91hxwVAbj4VqDtcB+jm0w==:YCRKBloh/y76NMig8WlCXw=="
+      vault_token: "AES:zgMNV+0ZaJo14P1V+7PU7w==:U7cTKlkXg33N8s4zUcPV48jlF39k4n4kUrXuKzZJi3U="
     environment_variables:
       tool_name: prometheus
     stages:
