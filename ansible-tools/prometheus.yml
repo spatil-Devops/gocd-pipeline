@@ -25,4 +25,6 @@ pipelines:
             terraform:
               timeout: 0
               tasks:
-              - exec: { command: bash, arguments: ["setup-tools.sh"]}
+              - exec:
+                  command: bash
+                  arguments: ["setup-tools.sh"]
